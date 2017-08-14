@@ -24,19 +24,30 @@ var articleOneJson = {
 };
 
 var articleHtmlContent = function (jsonData) {
-  return `<html>
+  return `<html><head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" rel="stylesheet"/>
+    <link href="/ui/style.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="/ui/main.js"></script>
-    <h1>${jsonData.articleName}<h1>
-    <h2>${jsonData.articlePubDate}</h2>
-    <p>${jsonData.articleContent}</p>  
-    <input id="commentBox" type="textbox"></input>
-    <input id="updateComment" type="button" value="Post Comment"></input>
-    <p>Comments</p>
-    <span id="comments">
-      </span>    
-    <div><a href="/">back</a></div>
+    </head>
+    <body>
+    <div class="container-fluid">      
+      <a class="right" href="/">back</a>
+      <div class="center">
+        <img src="/ui/madi.png" class="img-medium"/>
+        <h1>${jsonData.articleName}<h1>
+        <h2>${jsonData.articlePubDate}</h2>
+        <p>${jsonData.articleContent}</p>      
+      </div>
+      <div class="center">
+        <input id="commentBox" type="text"></input>
+        <input id="updateComment" type="button" value="Post Comment"></input>
+        <p class="bold">Comments</p>
+        <div id="comments"></div>    
+      </div>
+      
+    </div>
+    </body>
   </html>`
 };
 
