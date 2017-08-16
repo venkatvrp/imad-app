@@ -67,7 +67,7 @@ app.get('/updatePost', function (req, res) {
   console.log('comment:: ' + commentText);
   res.send(commentText);
 });
-
+ 
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
