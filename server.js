@@ -32,15 +32,17 @@ var articleHtmlContent = function (jsonData) {
     </head>
     <body>
     <div class="container-fluid">      
-      <a class="right" href="/">back</a>
-      <div class="center">
-        <img src="/ui/madi.png" class="img-medium"/>
-        <h1>${jsonData.articleName}<h1>
-        <h2>${jsonData.articlePubDate}</h2>
-        <p>${jsonData.articleContent}</p>      
-      </div>
-      <div class="center">
-        <input id="commentBox" type="text"></input>
+      <span><a class="right" href="/">back</a></span>
+      <article>
+        <div class="center">
+          <span><img src="/ui/madi.png" class="img-medium"/></span>
+          <h1>${jsonData.articleName}<h1>
+          <h2>${jsonData.articlePubDate}</h2>
+          <p>${jsonData.articleContent}</p>      
+        </div>
+      </article>
+      <div class="form-group">        
+        <textarea class="form-control comment-box" rows="5" id="commentBox"></textarea>
         <input id="updateComment" type="button" value="Post Comment"></input>
         <p class="bold">Comments</p>
         <div id="comments"></div>    
