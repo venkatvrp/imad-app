@@ -15,21 +15,21 @@ var config = {
 }
 
 var articleOneJson = {
-  "data": {
+  
     "articleOne": {
       "title": "ArticleOne",
       "publishdate": "06Aug2017",
       "content": "This is the first article One Content"
     }, "articleTwo": {
-      "articleName": "ArticleTwo",
-      "articlePubDate": "07Aug2017",
-      "articleContent": "This is the first article Two Content"
+      "title": "ArticleTwo",
+      "publishdate": "07Aug2017",
+      "content": "This is the first article Two Content"
     }, "articleThree": {
-      "articleName": "ArticleThree",
-      "articlePubDate": "08Aug2017",
-      "articleContent": "This is the first article Three Content"
+      "title": "ArticleThree",
+      "publishdate": "08Aug2017",
+      "content": "This is the first article Three Content"
     }
-  }
+  
 };
 
 var articleHtmlContent = function (jsonData) {
