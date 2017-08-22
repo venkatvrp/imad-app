@@ -51,6 +51,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+
 app.get('/article/:articleName', function (req, res) {
   pool.query("select * from article where name = $1",[req.params.articleName],function(err, result){
       if(err){
