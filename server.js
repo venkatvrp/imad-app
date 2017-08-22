@@ -51,7 +51,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/article/:articleName', function (req, res) {
-  pool.query("select * from article where name = '"+req.params.articleName+"'",function(err, result){
+  pool.query("select * from article where name = $1",[req.params.articleName],function(err, result){
       if(err){
           res.status('500').send(err.toString());
       }else if(result.rows.length===0){
