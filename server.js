@@ -28,7 +28,7 @@ var articleHtmlContent = function (jsonData) {
         <div class="center">
           <span><img src="/ui/madi.png" class="img-medium"/></span>
           <h1>${jsonData.title}<h1>
-          <h2>${jsonData.publishdate}</h2>
+          <h2>${jsonData.publishdate.toDateString()}</h2>
           <p>${jsonData.content}</p>      
         </div>
       </article>
