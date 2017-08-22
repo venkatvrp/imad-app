@@ -62,13 +62,22 @@ var articleHtmlContent = function (jsonData) {
   </html>`
 };
 
+var pool = new pgPool(config);
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/article/:articleName', function (req, res) {
-  res.send(articleHtmlContent(articleOneJson.data[req.params.articleName]));
+  pool.query('Select * from article where name ='+req.params.articleName,function(err, result){
+      if(err){
+          res.status('500').send(err.toString());
+      }else{
+          res.send(articleHtmlContent(JSON.stringify(result.rows[0])));
+      }
+  });
+  
+  
 });
 
 app.get('/updatePost', function (req, res) {
@@ -77,7 +86,7 @@ app.get('/updatePost', function (req, res) {
   res.send(commentText);
 });
 
-var pool = new pgPool(config);
+
 app.get('/test-db', function (req, res) {
   pool.query("select * from article",function(err,result){
       if(err){
