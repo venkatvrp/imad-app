@@ -24,4 +24,14 @@ $( document ).ready(function() {
         });
         $("#commentBox").val("");
     });
+    
+    $("#login").click(function(){
+        $.ajax({
+            method: "POST",
+            url: "/login",
+        })
+        .done(function( msg ) {
+            alert("Login Success !!");          
+        });
+    });
 });
