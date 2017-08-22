@@ -62,8 +62,6 @@ app.get('/article/:articleName', function (req, res) {
           res.send(articleHtmlContent(result.rows[0]));
       }
   });
-  
-  
 });
 
 app.get('/updatePost', function (req, res) {
@@ -78,12 +76,12 @@ app.get('/updatePost', function (req, res) {
 });
 
 
-app.get('/test-db', function (req, res) {
-  pool.query("select * from article",function(err,result){
+app.get('/getComments', function (req, res) {
+  pool.query("select * from comments where name=$1",[req.query.articleName],function(err,result){
       if(err){
           res.status('500').send(err.toString());
       }else{
-          res.status('200').send(JSON.stringify(result.rows));
+          res.status('200').send(result.rows);
       }
   });
 });
