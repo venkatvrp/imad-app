@@ -5,8 +5,10 @@ $( document ).ready(function() {
         url: "/getComments"+"?articleName="+$("#articleName").val(),
     })
     .done(function( msg ) {
-        for(var i=0;i<msg.length;i++){
-            $("#comments").append(msg[i].comments+"</br>");                
+        if(msg){
+            for(var i=0;i<msg.length;i++){
+                $("#comments").append(msg[i].comments+"</br>");                
+            }
         }
     });
     
