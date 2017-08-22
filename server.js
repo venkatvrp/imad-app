@@ -79,7 +79,7 @@ app.get('/updatePost', function (req, res) {
 
 var pool = new pgPool(config);
 app.get('/test-db', function (req, res) {
-  pool.query("Select * from test",function(err,result){
+  pool.query("Select * from article",function(err,result){
       if(err){
           res.status('500').send(err.toString());
       }else{
