@@ -75,6 +75,7 @@ app.get('/article/:articleName', function (req, res) {
       }else if(result.rows.length===0){
           res.status('401').send("article not found");
       }else{
+          console.log(result.rows[0]);
           res.send(articleHtmlContent(result.rows[0]));
       }
   });
