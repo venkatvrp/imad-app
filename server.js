@@ -17,9 +17,9 @@ var config = {
 var articleOneJson = {
   "data": {
     "articleOne": {
-      "articleName": "ArticleOne",
-      "articlePubDate": "06Aug2017",
-      "articleContent": "This is the first article One Content"
+      "title": "ArticleOne",
+      "publishdate": "06Aug2017",
+      "content": "This is the first article One Content"
     }, "articleTwo": {
       "articleName": "ArticleTwo",
       "articlePubDate": "07Aug2017",
