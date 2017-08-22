@@ -14,24 +14,6 @@ var config = {
     port:'5432'
 }
 
-var articleOneJson = {
-  
-    "articleOne": {
-      "title": "ArticleOne",
-      "publishdate": "06Aug2017",
-      "content": "This is the first article One Content"
-    }, "articleTwo": {
-      "title": "ArticleTwo",
-      "publishdate": "07Aug2017",
-      "content": "This is the first article Two Content"
-    }, "articleThree": {
-      "title": "ArticleThree",
-      "publishdate": "08Aug2017",
-      "content": "This is the first article Three Content"
-    }
-  
-};
-
 var articleHtmlContent = function (jsonData) {
   return `<html><head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" rel="stylesheet"/>
