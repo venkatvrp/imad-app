@@ -68,7 +68,7 @@ app.get('/article/:articleName', function (req, res) {
 app.get('/updatePost', function (req, res) {
   var commentText = req.query.comment;
   console.log('comment:: ' + commentText);
-  pool.query("insert into comments(comments,userid) values (?,?)",[commentText],2,function(err,result){
+  pool.query("insert into comments(comments,userid) values ($1,$2)",[commentText,2],function(err,result){
       if(err){
           res.status('500').send(err.toString());
       }else{
