@@ -45,9 +45,9 @@ var articleHtmlContent = function (jsonData) {
       <article>
         <div class="center">
           <span><img src="/ui/madi.png" class="img-medium"/></span>
-          <h1>${jsonData.articleName}<h1>
-          <h2>${jsonData.articlePubDate}</h2>
-          <p>${jsonData.articleContent}</p>      
+          <h1>${jsonData.title}<h1>
+          <h2>${jsonData.publishdate}</h2>
+          <p>${jsonData.content}</p>      
         </div>
       </article>
       <div class="form-group">        
