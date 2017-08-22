@@ -75,7 +75,7 @@ app.get('/updatePost', function (req, res) {
           res.status('200').send('commend updated successfully !!');
       }
   });
-  res.send(commentText);
+  //res.send(commentText);
 });
 
 
