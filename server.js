@@ -90,13 +90,13 @@ app.get('/getComments', function (req, res) {
 
 app.get('/login', function (req, res) {
   pool.query("select * from usertab where username=$1",[req.param.username],function(err,result){
-      alert(req.param.username);
+      
       if(err){
           res.status('500').send(err.toString());
       }else if(result.rows.length===0){
-          res.send("Login Success !! user authenticated");
-      }else{
           res.send("Login Failed.  Please try again");
+      }else{
+          res.send("Login Success !! user authenticated");
       }
   });
 });
