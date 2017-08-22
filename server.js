@@ -82,7 +82,7 @@ app.get('/getComments', function (req, res) {
           res.status('500').send(err.toString());
       }else{
           //console.log(result.rows[0]);
-          res.status('200').send(result.rows[0]);
+          res.status('200').send(result.rows);
       }
   });
 });
