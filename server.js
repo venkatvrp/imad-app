@@ -33,6 +33,7 @@ var articleHtmlContent = function (jsonData) {
         </div>
       </article>
       <div class="form-group">        
+        <input id="articleName" type="hidden" value="${jsonData.name}"/>
         <textarea class="form-control comment-box" rows="5" id="commentBox"></textarea>
         <input id="updateComment" type="button" value="Post Comment"></input>
         <p class="bold">Comments</p>
@@ -66,13 +67,11 @@ app.get('/article/:articleName', function (req, res) {
 });
 
 app.get('/updatePost', function (req, res) {
-  var commentText = req.query.comment;
-  console.log('comment:: ' + commentText);
-  pool.query("insert into comments(comments,userid,name) values ($1,$2,$3)",[commentText,2,'articleOne'],function(err,result){
+  pool.query("insert into comments(comments,userid,name) values ($1,$2,$3)",[req.query.comment,2,req.query.articleName],function(err,result){
       if(err){
           res.status('500').send(err.toString());
       }else{
-          res.status('200').send('comment updated successfully !!');
+          res.status('200').send(commentText);
       }
   });
   //res.send(commentText);
