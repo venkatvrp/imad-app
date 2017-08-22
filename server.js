@@ -81,7 +81,8 @@ app.get('/getComments', function (req, res) {
       if(err){
           res.status('500').send(err.toString());
       }else{
-          res.status('200').send(result.rows[0]);
+          console.log(result.rows[0]);
+          res.status('200').send('fetched results');
       }
   });
 });
