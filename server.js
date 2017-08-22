@@ -71,7 +71,7 @@ app.get('/updatePost', function (req, res) {
       if(err){
           res.status('500').send(err.toString());
       }else{
-          res.status('200').send(commentText);
+          res.status('200').send(req.query.comment);
       }
   });
   //res.send(commentText);
