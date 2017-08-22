@@ -1,9 +1,18 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var pgPool = required('pg').Pool;
 
 var app = express();
 app.use(morgan('combined'));
+
+var config = {
+    host:'db.imad.hasura-app.io',
+    user:'venkatvrp',
+    password: 'db-venkatvrp-16948',
+    database:'venkatvrp',
+    port:'5432'
+}
 
 var articleOneJson = {
   "data": {
@@ -66,6 +75,17 @@ app.get('/updatePost', function (req, res) {
   var commentText = req.query.comment;
   console.log('comment:: ' + commentText);
   res.send(commentText);
+});
+
+var pool = new pgPool(config);
+app.get('/test-db', function (req, res) {
+  pool.query("Select * from user",function(err,result){
+      if(err){
+          res.status('500').send(err.toString());
+      }else{
+          res.status('200').send(JSON.stringify(result.rows));
+      }
+  });
 });
  
 
