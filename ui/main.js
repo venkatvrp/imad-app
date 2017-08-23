@@ -43,7 +43,7 @@ $( document ).ready(function() {
             $("#landingSection").show();
         })
         .fail(function(err) {
-            alert( "error" +err);
+            alert( "error" +err.toString());
         })
         .always(function() {
             alert( "finished" );
