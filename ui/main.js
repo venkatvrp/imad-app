@@ -30,6 +30,8 @@ $( document ).ready(function() {
         $.ajax({
             method: "POST",
             url: "/login",
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
             data: JSON.stringify(inputJson)
         })
         .done(function(msg) {
