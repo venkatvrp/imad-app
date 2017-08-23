@@ -25,7 +25,7 @@ $( document ).ready(function() {
         $("#commentBox").val("");
     });
     
-    $("#login").click(function(){
+    $("#loginsubmit").click(function(){
         $.ajax({
             method: "POST",
             url: "/login",
@@ -33,5 +33,9 @@ $( document ).ready(function() {
         .done(function( msg ) {
             alert("Login Success !!");          
         });
+    });
+    
+     $("#login").click(function(){
+       $("#loginSection").show();
     });
 });
