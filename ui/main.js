@@ -42,8 +42,8 @@ $( document ).ready(function() {
             $("#registerSection").hide();
             $("#landingSection").show();
         })
-        .fail(function(err) {
-            alert( "error" +err.toString());
+        .fail(function(xhr, textStatus, error) {
+            alert( "error" +error);
         })
         .always(function() {
             alert( "finished" );
