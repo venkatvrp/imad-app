@@ -43,6 +43,7 @@ $( document ).ready(function() {
         })
         .fail(function(xhr, textStatus, error) {
             alert( "error" +error);
+            $("#login-status-message").html(error);
         });
         
     });
