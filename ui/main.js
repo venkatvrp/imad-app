@@ -32,7 +32,7 @@ $( document ).ready(function() {
             url: "/login",
             contentType: 'application/json',
             dataType: 'json',
-            data: inputJson
+            data: JSON.stringify(inputJson)
         }).done(function(msg) {
             alert(msg);
             //console.log('req.session.user'+req.session.user); 
