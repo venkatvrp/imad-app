@@ -34,13 +34,14 @@ $( document ).ready(function() {
             data: JSON.stringify({
                 username:$("#username").val(),
                 password:$("#password").val()
-            })
-        }).done(function(msg) {
-            //alert(msg);
-            //console.log('req.session.user'+req.session.user); 
-            $("#loginSection").hide();
-            $("#registerSection").hide();
-            $("#landingSection").show();
+            }),
+            success: function(msg){
+                alert(msg);
+                console.log('req.session.user'+req.session.user); 
+                $("#loginSection").hide();
+                $("#registerSection").hide();
+                $("#landingSection").show();
+            }
         });
         
     });
