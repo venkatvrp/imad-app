@@ -33,13 +33,21 @@ $( document ).ready(function() {
             contentType: 'application/json',
             dataType: 'json',
             data: JSON.stringify(inputJson)
-        }).done(function(msg) {
+        })
+        .done(function() {
+            alert( "second success" );
             alert(msg);
             //console.log('req.session.user'+req.session.user); 
             $("#loginSection").hide();
             $("#registerSection").hide();
             $("#landingSection").show();
-        });
+        })
+        .fail(function() {
+            alert( "error" );
+        })
+        .always(function() {
+            alert( "finished" );
+         });
         
     });
     
