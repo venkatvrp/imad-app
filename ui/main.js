@@ -30,8 +30,8 @@ $( document ).ready(function() {
             method: "POST",
             url: "/login",
             data: {
-                username:$("#username").val(),
-                password:$("#password").val()
+                username:'$("#username").val()',
+                password:'$("#password").val()'
             }
         })
         .done(function( msg ) {
