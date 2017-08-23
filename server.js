@@ -102,6 +102,7 @@ app.post('/login', function (req, res) {
       }else if(result.rows.length===0){
           res.status('401').send('{"message":"Login Failed. Try again !!"}');
       }else{
+          console.log(result.rows[0]);
           //if(req.body.username===result.rows[0].password)
           req.session.authid = req.body.username;
           res.status('200').send('{"message":"Login Success!!. user authenticated"}');
