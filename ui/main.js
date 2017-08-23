@@ -32,8 +32,7 @@ $( document ).ready(function() {
             data: {
                 username:$("#username").val(),
                 password:$("#password").val()
-            },
-            contentType: 'application/json'
+            }
         })
         .done(function( msg ) {
             alert(msg);        
