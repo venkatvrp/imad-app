@@ -34,7 +34,7 @@ $( document ).ready(function() {
             dataType: 'json',
             data: JSON.stringify(inputJson)
         })
-        .done(function() {
+        .done(function(msg) {
             alert( "second success" );
             alert(msg);
             //console.log('req.session.user'+req.session.user); 
