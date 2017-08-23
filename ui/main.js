@@ -36,11 +36,11 @@ $( document ).ready(function() {
         })
         .done(function( msg ) {
             alert(msg);      
-            if(msg.status!=401){
-                $("#loginSection").hide();
-                $("#registerSection").hide();
-                $("#landingSection").show();
-            }
+            
+            $("#loginSection").hide();
+            $("#registerSection").hide();
+            $("#landingSection").show();
+            
         });
     });
     
