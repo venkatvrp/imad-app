@@ -34,13 +34,12 @@ $( document ).ready(function() {
             data: JSON.stringify({
                 username:$("#username").val(),
                 password:$("#password").val()
-            }),
-            success: function( msg ) {
-                $("#loginSection").hide();
-                $("#registerSection").hide();
-                $("#landingSection").show();
-            }
-        })
+            })
+        }).done(function( msg ) {
+            $("#loginSection").hide();
+            $("#registerSection").hide();
+            $("#landingSection").show();
+        });
         
     });
     
