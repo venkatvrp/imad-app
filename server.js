@@ -106,6 +106,8 @@ app.post('/login', function (req, res) {
           if(req.body.password===result.rows[0].password){
             req.session.authid = req.body.username;
             res.status('200').send('{"message":"Login Success!!. user authenticated"}');
+          }else{
+            res.status('200').send('{"message":"Incorrect Username/Password.  Try Again !!"}');  
           }
       }
   });
