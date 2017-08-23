@@ -36,6 +36,7 @@ $( document ).ready(function() {
                 password:$("#password").val()
             })
         }).done(function( msg ) {
+            alert(msg);
             $("#loginSection").hide();
             $("#registerSection").hide();
             $("#landingSection").show();
