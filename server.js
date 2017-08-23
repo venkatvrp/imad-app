@@ -89,6 +89,7 @@ app.get('/getComments', function (req, res) {
 });
 
 app.get('/login', function (req, res) {
+  alert(req.param.username + req.param.password);
   pool.query("select * from usertab where username=$1",[req.param.username],function(err,result){
       
       if(err){
