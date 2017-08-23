@@ -35,12 +35,13 @@ $( document ).ready(function() {
                 username:$("#username").val(),
                 password:$("#password").val()
             }),
+            success: function( msg ) {
+                $("#loginSection").hide();
+                $("#registerSection").hide();
+                $("#landingSection").show();
+            }
         })
-        .done(function( msg ) {
-            $("#loginSection").hide();
-            $("#registerSection").hide();
-            $("#landingSection").show();
-        });
+        
     });
     
     $("#login").click(function(){
