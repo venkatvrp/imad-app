@@ -5,7 +5,8 @@ var pgPool = require('pg').Pool;
 
 var app = express();
 app.use(morgan('combined'));
-app.use(express.bodyParser());
+
+var bodyParser = require('body-parser');
 
 var config = {
     host:'db.imad.hasura-app.io',
