@@ -35,6 +35,7 @@ $( document ).ready(function() {
             data: JSON.stringify(inputJson)
         })
         .done(function(msg) {
+            $("#login-status-message").html(msg.message);
             $("#homeSection").hide();
             $("#loginSection").hide();
             $("#registerSection").hide();
