@@ -26,22 +26,19 @@ $( document ).ready(function() {
     });
     
     $("#loginsubmit").click(function(){
+        var inputJson = JSON.stringify("{username:$('#username').val(),password:$('#password').val()}");
         $.ajax({
             method: "POST",
             url: "/login",
             contentType: 'application/json',
             dataType: 'json',
-            data: JSON.stringify({
-                username:$("#username").val(),
-                password:$("#password").val()
-            }),
-            success: function(msg){
-                alert(msg);
-                console.log('req.session.user'+req.session.user); 
-                $("#loginSection").hide();
-                $("#registerSection").hide();
-                $("#landingSection").show();
-            }
+            data: inputJson
+        }).done(function(msg) {
+            alert(msg);
+            //console.log('req.session.user'+req.session.user); 
+            $("#loginSection").hide();
+            $("#registerSection").hide();
+            $("#landingSection").show();
         });
         
     });
