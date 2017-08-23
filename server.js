@@ -3,10 +3,15 @@ var morgan = require('morgan');
 var path = require('path');
 var pgPool = require('pg').Pool;
 var bodyParser = require('body-parser');
+var session = require('express-session');
 
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.user(session({
+    "secret":"Venkatesh",
+    "cookie":{maxAge: 30*60*60*24}
+    }));
 
 var config = {
     host:'db.imad.hasura-app.io',
@@ -97,7 +102,8 @@ app.post('/login', function (req, res) {
       }else if(result.rows.length===0){
           res.status('401').send('{"message":"Login Failed. Try again !!"}');
       }else{
-          //req.session.user = req.body.username;
+          //if(req.body.username===result.rows[0].password)
+          req.session.authid = req.body.username;
           res.status('200').send('{"message":"Login Success!!. user authenticated"}');
       }
   });
