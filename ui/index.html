@@ -13,9 +13,9 @@
                 <div>
                     <a id="login" href="#">Login</a>
                     <a id="register" href="#">Register</a>
-                </div
+                </div>
             </div>
-            <div style="display:none;">
+            <div id="loginSection"style="display:none;">
                 <form>
                     <div class="form-group">
                         <label for="username">Username</label>
@@ -30,7 +30,26 @@
                     </div>
                 </form>
             </div>
-            <div class="center" style="display:none;">
+            <div id="registerSection" style="display:none;">
+                <form>
+                    <div class="form-group">
+                        <label for="regusername">Username</label>
+                        <input class="form-control" type="text" id="regusername" placeholder="username" />
+                    </div>
+                    <div class="form-group">
+                        <label for="regpassword">Password</label>
+                        <input class="form-control" type="password" id="regpassword" placeholder="password" />
+                    </div>
+                    <div class="form-group">
+                        <label for="regemail">Email Address</label>
+                        <input class="form-control" type="text" id="regemail" placeholder="password" />
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-default" type="submit" id="regsubmit" value="Register"/>
+                    </div>
+                </form>
+            </div>
+            <div id="landingSection" class="center" style="display:none;">
                 <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/2/000/0ad/264/2728130.jpg" class="img-medium"/>
                 <br>
                 <div class="center text-big bold">
