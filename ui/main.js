@@ -27,14 +27,14 @@ $( document ).ready(function() {
     
     $("#loginsubmit").click(function(){
         //var inputJson = {"username":$("#username").val(),"password":$("#password").val()};
-        var inputJson = {"username":"user","password":"password"};
+        var inputJson = {username:"user",password:"password"};
         //alert(inputJson);
         $.ajax({
             method: "POST",
             url: "/login",
             contentType: 'application/json',
             dataType: "json",
-            data: inputJson
+            data: JSON.stringify(inputJson)
         })
         .done(function(msg) {
             alert( "second success" );
