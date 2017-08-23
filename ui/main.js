@@ -35,7 +35,7 @@ $( document ).ready(function() {
             }
         })
         .done(function( msg ) {
-            alert("Login Success !!");          
+            alert(msg);          
         });
     });
     
