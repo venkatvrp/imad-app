@@ -35,7 +35,10 @@ $( document ).ready(function() {
             }
         })
         .done(function( msg ) {
-            alert(msg);          
+            alert(msg);        
+            $("#loginSection").hide();
+            $("#registerSection").hide();
+            $("#landingSection").show();
         });
     });
     
