@@ -98,7 +98,7 @@ app.post('/login', function (req, res) {
       }else if(result.rows.length===0){
           res.status('401').send("Login Failed.  Please try again");
       }else{
-          res.status('200').send("Login Success !! user authenticated");
+          //res.status('200').send("Login Success !! user authenticated");
       }
   });
 });
