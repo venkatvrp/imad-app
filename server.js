@@ -98,7 +98,7 @@ app.post('/login', function (req, res) {
           res.status('401').send("Login Failed.  Please try again");
       }else{
           //req.session.user = req.body.username;
-          res.status('200').send("Login Success. user authenticated");
+          res.status('200').send('{"message":"Login Success. user authenticated"}');
       }
   });
 });
