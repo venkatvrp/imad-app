@@ -35,8 +35,9 @@ $( document ).ready(function() {
                 username:$("#username").val(),
                 password:$("#password").val()
             })
-        }).done(function( msg ) {
-            alert(msg);
+        }).done(function(msg) {
+            //alert(msg);
+            console.log('req.session.id'+req.session.id); 
             $("#loginSection").hide();
             $("#registerSection").hide();
             $("#landingSection").show();
