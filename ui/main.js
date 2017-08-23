@@ -33,10 +33,10 @@ $( document ).ready(function() {
             url: "/login",
             contentType: 'application/json',
             dataType: 'json',
-            data: {
+            data: JSON.stringify({
                 username:$("#username").val(),
                 password:$("#password").val()
-            }
+            })
         })
         .done(function( msg ) {
             alert(msg);      
