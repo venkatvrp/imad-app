@@ -37,7 +37,7 @@ $( document ).ready(function() {
             })
         }).done(function(msg) {
             //alert(msg);
-            console.log('req.session.id'+req.session.id); 
+            console.log('req.session.user'+req.session.user); 
             $("#loginSection").hide();
             $("#registerSection").hide();
             $("#landingSection").show();
