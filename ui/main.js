@@ -35,10 +35,12 @@ $( document ).ready(function() {
             }
         })
         .done(function( msg ) {
-            alert(msg);        
-            $("#loginSection").hide();
-            $("#registerSection").hide();
-            $("#landingSection").show();
+            alert(msg);      
+            if(msg.status!=401){
+                $("#loginSection").hide();
+                $("#registerSection").hide();
+                $("#landingSection").show();
+            }
         });
     });
     
