@@ -35,7 +35,13 @@ $( document ).ready(function() {
         });
     });
     
-     $("#login").click(function(){
+    $("#login").click(function(){
        $("#loginSection").show();
+       $("#registerSection").hide();
+    });
+    
+    $("#register").click(function(){
+       $("#registerSection").show();
+       $("#loginSection").hide();
     });
 });
