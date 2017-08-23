@@ -35,8 +35,7 @@ $( document ).ready(function() {
                 username:$("#username").val(),
                 password:$("#password").val()
             })
-        })
-        .done(function(msg) {
+        }).done(function(msg) {
             alert(msg);      
             $("#loginSection").hide();
             $("#registerSection").hide();
