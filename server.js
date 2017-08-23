@@ -5,6 +5,7 @@ var pgPool = require('pg').Pool;
 
 var app = express();
 app.use(morgan('combined'));
+app.use(express.bodyParser());
 
 var config = {
     host:'db.imad.hasura-app.io',
@@ -13,7 +14,6 @@ var config = {
     database:'venkatvrp',
     port:'5432'
 }
-var bodyParser = require('body-parser')
 
 var articleHtmlContent = function (jsonData) {
   return `<html><head>
