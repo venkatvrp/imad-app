@@ -42,7 +42,6 @@ $( document ).ready(function() {
             $("#landingSection").show();
         })
         .fail(function(xhr, textStatus, error) {
-            alert( "error" +error);
             $("#login-status-message").html(error);
         });
         
