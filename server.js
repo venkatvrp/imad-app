@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 
 var app = express();
 app.use(morgan('combined'));
-app.use(bodyParser);
+app.use(bodyParser.json());
 
 var config = {
     host:'db.imad.hasura-app.io',
