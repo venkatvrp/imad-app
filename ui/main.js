@@ -37,19 +37,13 @@ $( document ).ready(function() {
             data: JSON.stringify(inputJson)
         })
         .done(function(msg) {
-            alert( "second success" );
-            alert(msg);
-            //console.log('req.session.user'+req.session.user); 
             $("#loginSection").hide();
             $("#registerSection").hide();
             $("#landingSection").show();
         })
         .fail(function(xhr, textStatus, error) {
             alert( "error" +error);
-        })
-        .always(function() {
-            alert( "finished" );
-         });
+        });
         
     });
     
