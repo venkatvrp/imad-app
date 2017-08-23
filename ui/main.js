@@ -32,8 +32,8 @@ $( document ).ready(function() {
         $.ajax({
             method: "POST",
             url: "/login",
-            //contentType: 'application/json',
-            //dataType: "json",
+            contentType: 'application/json',
+            dataType: "json",
             data: inputJson
         })
         .done(function(msg) {
