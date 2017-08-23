@@ -29,6 +29,10 @@ $( document ).ready(function() {
         $.ajax({
             method: "POST",
             url: "/login",
+            data: {
+                username:$("#username"),
+                password:$("#password")
+            }
         })
         .done(function( msg ) {
             alert("Login Success !!");          
