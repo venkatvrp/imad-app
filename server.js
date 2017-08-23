@@ -2,11 +2,11 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var pgPool = require('pg').Pool;
+var bodyParser = require('body-parser');
 
 var app = express();
 app.use(morgan('combined'));
-
-var body = require('body-parser');
+app.use(bodyParser);
 
 var config = {
     host:'db.imad.hasura-app.io',
