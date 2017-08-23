@@ -31,6 +31,8 @@ $( document ).ready(function() {
         $.ajax({
             method: "POST",
             url: "/login",
+            contentType: 'application/json',
+            dataType: 'json',
             data: {
                 username:$("#username").val(),
                 password:$("#password").val()
