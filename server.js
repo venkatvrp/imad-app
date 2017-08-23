@@ -91,7 +91,6 @@ app.get('/getComments', function (req, res) {
 });
 
 app.post('/login', function (req, res) {
-  
   pool.query("select * from usertab where username=$1",[req.body.username],function(err,result){
       if(err){
           res.status('500').send(err.toString());
