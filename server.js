@@ -91,14 +91,14 @@ app.get('/getComments', function (req, res) {
 });
 
 app.post('/login', function (req, res) {
-  console.log(req.body.username + req.body.password);
+  
   pool.query("select * from usertab where username=$1",[req.body.username],function(err,result){
       if(err){
           res.status('500').send(err.toString());
       }else if(result.rows.length===0){
           res.status('401').send("Login Failed.  Please try again");
       }else{
-          //res.status('200').send("Login Success !! user authenticated");
+          res.status('200').send("Login Success !! user authenticated");
       }
   });
 });
