@@ -26,6 +26,8 @@ $( document ).ready(function() {
     });
     
     $("#loginsubmit").click(function(){
+        console.log($("#username").val());
+        console.log($("#password").val());
         $.ajax({
             method: "POST",
             url: "/login",
@@ -36,7 +38,6 @@ $( document ).ready(function() {
         })
         .done(function( msg ) {
             alert(msg);      
-            
             $("#loginSection").hide();
             $("#registerSection").hide();
             $("#landingSection").show();
