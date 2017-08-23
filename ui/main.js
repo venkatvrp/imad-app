@@ -28,7 +28,7 @@ $( document ).ready(function() {
     $("#loginsubmit").click(function(){
         //var inputJson = {"username":$("#username").val(),"password":$("#password").val()};
         var inputJson = {username:"user",password:"password"};
-        //alert(inputJson);
+        alert(JSON.stringify(inputJson));
         $.ajax({
             method: "POST",
             url: "/login",
